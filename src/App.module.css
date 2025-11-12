@@ -1,15 +1,25 @@
 .layout {
-    display: grid;
-    grid-template-columns: 240px 1fr;
-    min-height: 100vh;
-    background: #101f34;
-    color: var(--primaryWhite, #ffffff);
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+  color: var(--text-color);
 }
 
 .sidebar {
-    background: #0b1a2a;
+  flex: 0 0 auto;
 }
 
 .content {
-    padding: 32px;
+  width: 100%;
+  padding: 40px;
+}
+
+@media (max-width: 960px) {
+  .layout {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+  }
 }

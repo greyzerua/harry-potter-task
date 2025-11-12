@@ -1,68 +1,101 @@
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=EB+Garamond:wght@400;500;600;700&display=swap");
+
 @font-face {
   font-family: "Montserrat";
   src: url("./assets/fonts/Montserrat-VariableFont_wght.ttf");
 }
 
 body {
-  display: flex;
-  font-family: "Montserrat";
+  font-family: "EB Garamond", "Montserrat", serif;
   margin: 0;
   font-size: 16px;
   min-height: 100vh;
+  color: var(--text-color);
+  background:
+    radial-gradient(circle at top, rgba(238, 225, 23, 0.08), transparent 55%),
+    radial-gradient(circle at bottom, rgba(14, 26, 64, 0.25), transparent 60%),
+    linear-gradient(160deg, rgba(59, 30, 5, 0.85), rgba(11, 10, 8, 0.95));
+  background-color: var(--bg-color);
 }
 
 .root {
   display: flex;
   flex-direction: column;
-  flex: 1;
 }
 
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: "EB Garamond", "Montserrat", serif;
   font-synthesis: none;
-  text-rendering: optimizelegibility;
+  text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  --primaryWhite: #FFF;
-  --primaryGrey: #656565;
-  --primaryBlack: #111;
-  --lightGrey: #CCC;
-  --darkGrey: #333;
-  --primaryButtonHoverColor: #585858;
-  --secondaryButtonColor: #EF4934;
-  --secondaryButtonHoverColor: #D43824;
-  --secondaryGrey: #E1E1E1;
-  --greyHover: #F1F1F1;
+  --bg-color: #0b0a08;
+  --text-color: #f5deb3;
+  --accent-gold: #c6a664;
+  --accent-red: #7b1113;
+  --accent-green: #1a472a;
+  --accent-blue: #0e1a40;
+  --accent-yellow: #eee117;
+
+  --primaryWhite: var(--text-color);
+  --primaryGrey: #bfa76f;
+  --primaryBlack: #050402;
+  --lightGrey: rgba(245, 222, 179, 0.4);
+  --darkGrey: rgba(12, 11, 7, 0.85);
+  --primaryButtonHoverColor: color-mix(in srgb, var(--accent-gold) 80%, #ffffff);
+  --secondaryButtonColor: var(--accent-red);
+  --secondaryButtonHoverColor: color-mix(in srgb, var(--accent-red) 85%, #ffffff);
+  --secondaryGrey: rgba(198, 166, 100, 0.25);
+  --greyHover: rgba(198, 166, 100, 0.35);
+  --card-bg: rgba(14, 26, 64, 0.2);
+  --card-border: rgba(198, 166, 100, 0.5);
+  --glow: 0 0 18px rgba(198, 166, 100, 0.3);
 }
 
 p {
-  color: var(--textColor);
+  color: var(--text-color);
   margin: 0;
   font-weight: 400;
   font-size: 22px;
 }
 
 h1 {
+  font-family: "Cinzel", "EB Garamond", serif;
+  color: var(--accent-gold);
   margin: 0;
   line-height: 1;
+  letter-spacing: 0.64px;
 }
 
 h2 {
-  color: var(--textColor);
+  font-family: "Cinzel", "EB Garamond", serif;
+  color: var(--text-color);
   margin: 0;
   line-height: 1;
   font-weight: 600;
+  letter-spacing: 0.96px;
+  text-transform: uppercase;
 }
 
 button {
-  border: none;
-  padding: .6em 1.2em;
-  font-family: "Montserrat";
-  font-size: 1em;
+  border: 1px solid var(--accent-gold);
+  border-radius: 999px;
+  padding: 10px 26px;
+  font-family: "Cinzel", "Montserrat", serif;
+  font-size: 16px;
   cursor: pointer;
-  padding: 0;
-  background-color: transparent;
+  background: linear-gradient(135deg, rgba(198, 166, 100, 0.18), rgba(198, 166, 100, 0.05));
+  color: var(--text-color);
+  text-transform: uppercase;
+  letter-spacing: 1.28px;
+}
+
+button:hover,
+button:focus-visible {
+  background: linear-gradient(135deg, rgba(198, 166, 100, 0.3), rgba(198, 166, 100, 0.12));
+  box-shadow: var(--glow);
+  transform: translateY(-1px);
 }
 
 input {
@@ -80,6 +113,14 @@ input:-webkit-autofill:active {
   transition: background-color 9999s ease-in-out 0s;
   caret-color: var(--loginInput);
   -webkit-text-fill-color: var(--loginInput) !important;
+}
+
+.glass-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 18px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
 }
 
 .bold-hover {
@@ -107,7 +148,7 @@ input:-webkit-autofill:active {
 @media (prefers-color-scheme: light) {
 
   :root {
-    background-color: var(--primaryWhite);
+    background-color: var(--bg-color);
   }
 }
 
@@ -115,4 +156,40 @@ ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
+}
+
+a {
+  color: var(--accent-yellow);
+  text-decoration: none;
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent-gold), transparent);
+  opacity: 0;
+  transform: scaleX(0.4);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+a:hover,
+a:focus-visible {
+  color: var(--accent-gold);
+}
+
+a:hover::after,
+a:focus-visible::after {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+::selection {
+  background: rgba(198, 166, 100, 0.35);
+  color: var(--bg-color);
 }
