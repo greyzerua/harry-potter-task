@@ -13,7 +13,7 @@ const App = () => (
 
     <main className={styles.content}>
       <Routes>
-        <Route index path={APP_LINK_URLS[EAppPage.ROOT]} element={<Characters />} />
+        <Route path={APP_LINK_URLS[EAppPage.ROOT]} element={<Characters />} />
         <Route path={APP_LINK_URLS[EAppPage.SPELLS]} element={<Spells />} />
         <Route path={APP_LINK_URLS[EAppPage.CHARACTERS]} element={<Characters />} />
         <Route path={`${APP_LINK_URLS[EAppPage.CHARACTERS]}/:id`} element={<CharacterDetails />} />
