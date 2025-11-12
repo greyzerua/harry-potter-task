@@ -14,7 +14,7 @@ body {
   background: 
   radial-gradient(circle at top, rgba(238, 225, 23, 0.08), transparent 55%),
   radial-gradient(circle at bottom, rgba(14, 26, 64, 0.25), transparent 60%),
-  linear-gradient(160deg, rgb(10 6 3 / 85%), rgba(11, 10, 8, 0.95));
+  linear-gradient(160deg, rgb(10 6 3 / 85%), rgba(11, 11, 8, 0.95));
   background-color: var(--bg-color);
 }
 
