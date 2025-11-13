@@ -60,7 +60,7 @@
 .image,
 .placeholder {
   width: 320px;
-  height: 440px;
+  height: 340px;
   border-radius: 18px;
   object-fit: cover;
   flex-shrink: 0;
@@ -138,7 +138,7 @@
   .image,
   .placeholder {
     width: 280px;
-    height: 380px;
+    height: 300px;
   }
 
   .name {
@@ -159,7 +159,7 @@
     width: 100%;
     max-width: 360px;
     height: auto;
-    aspect-ratio: 3 / 4;
+    aspect-ratio: 1 / 1.2;
   }
 
   .details {
@@ -174,13 +174,19 @@
 
 @media (max-width: 540px) {
   .container {
-    padding: 20px;
+    padding: 32px;
     gap: 20px;
   }
 
   .content {
     padding: 16px;
     gap: 16px;
+    max-width: 360px;
+  }
+
+  .image,
+  .placeholder {
+    max-width: 300px;
   }
 
   .name {
@@ -211,11 +217,13 @@
     padding: 14px;
     gap: 14px;
     border-radius: 20px;
+    max-width: 320px;
   }
 
   .image,
   .placeholder {
-    max-width: 300px;
+    max-width: 100%;
+    height: 260px;
     border-radius: 14px;
   }
 
